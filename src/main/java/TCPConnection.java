@@ -23,7 +23,7 @@ public class TCPConnection {
         this(evenListener, new Socket(ipAdres, port));
     }
 
-    // этот конструктор отвечает за то что кто то снаружи создаст сокет
+    // этот конструктор отвечает за то, что кто то снаружи, создаст сокет
     // в данном случае, пусть тот кто создает соединение, позаботится передать в аргументы TCPConnectionListener
     public TCPConnection(TCPConnectionListener evenListener, Socket socket) throws IOException {
         // переменная слушателя событий
@@ -66,8 +66,6 @@ public class TCPConnection {
                     // если секция try закончилась, про причини исключения или еще какой, поток был прерван
                     // говорим слушателю событий onDisconnect
                     evenListener.onDisconnect(TCPConnection.this);
-
-
                 }
             }
         });
